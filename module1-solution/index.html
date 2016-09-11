@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+      .greentextbox { border-color: #00BB00; box-shadow: inset 0 1px 3px rgba(0,0,0,.05),0 0 8px rgba(82,168,236,.6);
+    -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,.05),0 0 8px rgba(82,168,236,.6);}
+      .redtextbox { border-color: #BB0000; box-shadow: inset 0 1px 3px rgba(0,0,0,.05),0 0 8px rgba(82,168,236,.6);
+    -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,.05),0 0 8px rgba(82,168,236,.6);}
+      .greenmsg { color: #00BB00; }
+      .redmsg { color: #BB0000; }
+    </style>
+    <script src="./angular.min.js"></script>
+    <script type="text/javascript" src="./app.js">
+    </script>
+  </head>
+<body ng-app="LunchCheck">
+   <div class="container" ng-controller="LunchCheckController">
+     <h1>Lunch Checker</h1>
+
+         <div class="form-group" >
+             <input id="lunch-menu" type="text" ng-model="menu"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control warning {{texthighlight}}">
+         </div>
+         <div class="form-group">
+             <button class="btn btn-default" ng-click="checkLunch()">Check If Too Much</button>
+         </div>
+         <div class="form-group message {{messagecolor}}">
+           {{message}}
+         </div>
+         <br>
+         (Note: This application do not consider an empty item, i.e., , , )
+   </div>
+
+</body>
+</html>
