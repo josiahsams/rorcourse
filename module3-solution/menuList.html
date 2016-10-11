@@ -1,0 +1,29 @@
+<p>
+<div class="error">
+{{menulist.message}}
+</div>
+</p>
+<div ng-show="menulist.showTable()">
+
+<table class="table-striped">
+  <thead>
+    <th>Name</th>
+    <th>Short Description</th>
+    <th>Description</th>
+    <th></th>
+  </thead>
+  <tbody>
+
+  <tr ng-repeat="item in menulist.items">
+    <td>{{ item.name }} </td>
+
+    <td>{{ item.short_name }}</td>
+    <td>{{item.description}}</td>
+    <td><button ng-click="menulist.onRemove({index: $index});" class="btn btn-primary">
+      Don't want this one!</button></td>
+
+  </tr>
+</tbody>
+</table>
+{{menulist.message}}
+</div>
