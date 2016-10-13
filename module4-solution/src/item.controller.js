@@ -5,12 +5,16 @@
   angular.module("MenuApp")
     .controller("ItemController", ItemController);
 
-  ItemController.$inject = ['items'];
-  function ItemController(items) {
+  ItemController.$inject = ['items', '$stateParams'];
+  function ItemController(items, $stateParams) {
     var itemList = this;
 
-    itemList.items = items.data.menu_items;
-    console.log("Got menu Items :: " + items.data.menu_items[0].name)
+    itemList.mitems = items.data.menu_items;
+    itemList.cSN = $stateParams.categoryShortName;
+
+
+    console.log("itemList.cSN " + itemList.cSN);
+    //console.log("Got menu Items :: " + items.data.menu_items[0].name)
 
   }
 

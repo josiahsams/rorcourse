@@ -10,7 +10,8 @@ function CategoryListController(items) {
   var categoryList = this;
 
   categoryList.categories = items.data;
-  console.log("Got categories :: " + items.data[0].name)
+
+  //console.log("Got categories :: " + items.data[0].name)
 }
 
 })();

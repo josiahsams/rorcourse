@@ -17,4 +17,5 @@ div.tabs {
 
 li[ui-sref] {
   text-decoration: underline;
+  cursor: pointer;
 }

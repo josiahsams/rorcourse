@@ -4,7 +4,9 @@
     .component("menuItems", {
       templateUrl: "src/template/item.sub.template.html",
       bindings: {
-        items: '<'
+        sn: '=',
+        mitems: '<'
+
       }
     });
 
