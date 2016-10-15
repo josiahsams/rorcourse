@@ -1,10 +1,29 @@
-<a ui-sref="home">Home</a>
-<a ui-sref="categories">Categories</a>
 
-<h3>Menu Items for Specific Category ({{$ctrl.sn}})</h3>
+<!-- <ol class="breadcrumb">
+  <li><a ui-sref="home">Home</a></li>
+  <li><a ui-sref="categories">Categories</a></li>
+</ol> -->
+
+<!-- <h3>Menu Items for Specific Category ({{$ctrl.sn}})</h3>
 <ul>
   <li ng-repeat="item in $ctrl.mitems" >
 
     {{ item.name }}
   </li>
-</ul>
+</ul> -->
+
+<div class="row">
+
+  <div class="col-md-6 item" ng-repeat="item in $ctrl.mitems">
+    <div class="list-group-item">
+      <h4 class="list-group-item-heading">
+        <span class="label label-warning">{{ item.short_name }}</span>
+        {{ item.name }}
+      </h4>
+      <p class="list-group-item-text">
+        {{ item.description }}
+      </p>
+    </div>
+  </div>
+
+</div>

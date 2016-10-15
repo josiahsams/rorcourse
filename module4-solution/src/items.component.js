@@ -6,7 +6,6 @@
       bindings: {
         sn: '=',
         mitems: '<'
-
       }
     });
 
