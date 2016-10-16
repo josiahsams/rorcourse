@@ -1,5 +1,5 @@
 (function(){
 
-  angular.module("MenuApp", ["data", 'ui.router']);
+  angular.module("MenuApp", ["data", 'ui.router','loaderMod']);
 
 })();

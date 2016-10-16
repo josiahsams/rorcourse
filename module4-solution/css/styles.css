@@ -19,3 +19,11 @@ li[ui-sref] {
   text-decoration: underline;
   cursor: pointer;
 }
+
+.loader{
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -180px; /* Negative half of height. */
+
+}​

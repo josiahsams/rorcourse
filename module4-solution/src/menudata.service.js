@@ -1,17 +1,18 @@
 (function(){
   angular.module("data")
-    .service("MenuDataService", MenuDataService);
+    .service("MenuDataService", MenuDataService)
+    .constant("ApiBaseUrl" ,"https://davids-restaurant.herokuapp.com");
 
-  MenuDataService.$inject = ['$http'];
+  MenuDataService.$inject = ['$http', 'ApiBaseUrl'];
 
-  function MenuDataService($http) {
+  function MenuDataService($http, ApiBaseUrl) {
     var menuData = this;
 
     menuData.getAllCategories = function() {
 
       return $http({
         method: "GET",
-        url: ("https://davids-restaurant.herokuapp.com/categories.json")
+        url: (ApiBaseUrl + "/categories.json")
       });
     }
 
@@ -19,7 +20,7 @@
       console.log("getItemsForCategory invoked with " + categoryShortName);
       return $http({
         method: "GET",
-        url: ("https://davids-restaurant.herokuapp.com/menu_items.json"),
+        url: (ApiBaseUrl + "/menu_items.json"),
         params: {
           category : categoryShortName
         }
