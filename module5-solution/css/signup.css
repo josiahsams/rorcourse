@@ -1,0 +1,27 @@
+textarea:focus, input:focus {
+    color: #3333ff;
+}
+
+input, select, textarea{
+    color: #555;
+    width: 400px;
+}
+legend {
+  color: #bbb;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+.ng-touched.ng-valid {
+  border: 2px green solid;
+}
+
+.ng-touched.ng-invalid {
+  border: 2px red solid;
+}
+
+#info {
+  margin-top: 20px;
+}

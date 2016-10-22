@@ -1,0 +1,23 @@
+
+<div class="container">
+
+    <div ng-if="myInfoCtrl.myInfo">
+    Your Information is as follows :
+    <br>
+
+    Name : {{myInfoCtrl.myInfo.firstname}} {{myInfoCtrl.myInfo.lastname}}
+    <br>
+    Email : {{myInfoCtrl.myInfo.email}}
+    <br>
+    Phone : {{myInfoCtrl.myInfo.phone}}
+    <br>
+    Your Favourite Item in our Menu : <br>
+
+    <load-fav-img favitem="myInfoCtrl.myInfo.favmenu">
+      <span>Retrieving information about your favourite item .. </span>
+    </load-fav-img>
+  </div>
+    <div ng-if="!myInfoCtrl.myInfo">
+      Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+    </div>
+</div>
