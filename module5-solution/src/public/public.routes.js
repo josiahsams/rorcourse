@@ -56,7 +56,14 @@ function routeConfig ($stateProvider) {
     })
     .state("public.signup", {
       url: "/signup",
-      templateUrl: 'src/public/signup.html'
+      templateUrl: 'src/public/signup.html',
+      controller: 'prefetchController',
+      controllerAs: 'prefetchCtrl',
+      resolve: {
+        menuitems : ['MenuService', function (MenuService) {
+          return MenuService.getAllMenuItems();
+        }]
+      }
     })
     ;
 }

@@ -17,7 +17,6 @@
         <input type="text" name="firstname" placeholder="Enter first name"
           ng-model="reg.user.firstname"
           required>
-          {{ reg.user.firstname }}
           <span
             ng-if="regForm.firstname.$error.required && regForm.firstname.$touched">
             First Name is Required
@@ -26,7 +25,6 @@
           <input type="text" name="lastname" placeholder="Enter Last name"
             ng-model="reg.user.lastname"
             required>
-            {{ reg.user.lastname }}
             <span
               ng-if="regForm.lastname.$error.required && regForm.lastname.$touched">
               Last Name is Required
@@ -36,25 +34,38 @@
         <input type="email" name="email" placeholder="Email"
           ng-model="reg.user.email"
           required>
-          <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+          <span
+            ng-if="regForm.email.$error.required && regForm.email.$touched">
+            Email is Required
+          </span>
+          <span ng-if="!regForm.email.$error.required && regForm.email.$invalid && regForm.email.$touched">
             Must be a valid email address: handle@domain format
           </span>
           <br>
 
         <input type="text" name="phone" placeholder="Phone ###-###-####"
-          ng-model="reg.user.phone"
+          ng-model="reg.user.phone" required
           pattern="(\d{3})-(\d{3})-(\d{4})">
-          <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+          <span
+            ng-if="regForm.phone.$error.required && regForm.phone.$touched">
+            Phone no. is Required
+          </span>
+          <span ng-if="!regForm.phone.$error.required && regForm.phone.$invalid && regForm.phone.$touched">
             Phone must be in the format ###-###-####.
           </span>
           <br>
+
           <input type="text" name="favmenu" placeholder="Enter your Favourite Menu Item's Short Name"
-            ng-model="reg.user.favmenu"
+            ng-model="reg.user.favmenu" favitem-validate
             required>
-            {{ reg.user.favmenu }}
+            <span ng-show="reg.menuname"> <b>Favourite Item Name : </b> {{reg.menuname}}</span>
             <span
               ng-if="regForm.favmenu.$error.required && regForm.favmenu.$touched">
               User Favourite Item is Required
+            </span>
+            <span
+              ng-if="!regForm.favmenu.$error.required && regForm.favmenu.$error.favitemValidate && regForm.favmenu.$touched">
+              No such menu number exists !
             </span>
             <br>
 
